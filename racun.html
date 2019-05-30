@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vaš račun</title>
+    <style>
+        table, td{
+            border: 1px solid black;
+        }
+        table{
+            margin-left:auto;
+            margin-right:auto;
+            text-align:center;
+        }
+        td{
+            width:300px;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <h2 style="text-align: center;">Rent-a-car centar d.o.o. Mostar</h2>
+    <h4 style="text-align: center;">Telefon: +387 36 000 000<br>Web: rentacarmostar.ba<br>
+    E-mail: kontakt@rentacarmostar.ba</h4>
+    <br>
+    <h1 style="text-align: center;">Potvrda o rezervaciji</h1>
+    <br><br>
+    <table id="result"></table>
+    <br><br>
+    <h3 style="text-align: center;" id="ukpn">Ukupno za platiti:</h3>
+    <br><br>
+    <h4 style="text-align: center;">***HVALA NA POVJERENJU***</h4>
+    <br><br><br><br><br>
+    <h5 style="text-align: center; ">Pravila i uslovi najma: Iznajmljeno vozilo mogu voziti osobe koje imaju minimalno 21 godinu i validnu<br>
+        vozačku dozvolu te validan pasoš/ličnu kartu;<br>iznajmljeno vozilo se ne smije koristiti za takmičenja, vuču, van prometnica te većom<br>brzinom od
+        dozvoljene;zabranjeno kršenje zakonskih odredbi<br>u prometu;korisnik se obvezuje vratiti sve što je zaprimio u istom stanju; naša firma <br> ne odgovara za izgubljenu
+        imovinu; osiguranje ne pokriva štete nastale nemarom vozača;<br>vozilo treba biti vraćeno punog rezervoara!</h5>
+</body>
+<script>
+    window.print();
+    // Retrieve
+    var kasko1= sessionStorage.getItem("kasko");
+    var sjedalica1= sessionStorage.getItem("sjedalica");
+    
+    if(kasko1=="true")
+        kasko1="DA";
+    else
+        kasko1="NE";
+    
+        if(sjedalica1=="true")
+        sjedalica1="DA";
+    else
+        sjedalica1="NE";
+    
+    document.getElementById("result").innerHTML += "<tr><td><b>Ime i prezime</b></td><td>" + sessionStorage.getItem("ime") +"</td></tr><tr><td><b>Vozilo</b></td><td>"+
+    sessionStorage.getItem("vozilo")+"</td></tr><tr><td><b>Cijena</b></td><td>"+sessionStorage.getItem("cijena")+"/dan</td></tr><tr><td><b>Datum preuzimanja</b></td><td>"+
+    sessionStorage.getItem("datum")+"</td></tr><tr><td><b>Dani</b></td><td>"+sessionStorage.getItem("dani")+"</td></tr><tr><td><b>Kasko</b></td><td>"+kasko1+"</td></tr><tr><td><b>Sjedalica</b></td><td>"+sjedalica1+"</td></tr><tr><td><b>Kontakt info</b></td><td>"+sessionStorage.getItem("ime2")+"</td></tr>";
+    
+    document.getElementById("ukpn").innerHTML+=" "+sessionStorage.getItem("ukupno");
+</script>
+</html>
