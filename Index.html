@@ -346,7 +346,7 @@
             
             <h2 style="text-align: center;">Rezervirajte vozilo</h2>
             <br>
-            <form data-netlify="true">
+            <form id="rezrv" data-netlify="true">
                     <label>Vozilo:</label> <input type="text" name="vozilo" id="voziloIn" value="Kliknite na sliku jednog od vozila" readonly><br>
                     <label>Broj dana:</label><input type="number" name="brojDana" id="brojDanaIn" min="1" max="90" required>
                     <label>Cijena</label> (dan): <input type="text" name="cijena" id="cijenaIn" value="0 KM" readonly><br>
@@ -475,7 +475,8 @@
         }
         else{
         var win = window.open("racun.html", '_blank');
-        win.focus();
+        win.focus();        
+        document.getElementById("rezrv").submit();
         pozadina.style.display="none";
         }
     }
