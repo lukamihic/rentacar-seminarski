@@ -346,19 +346,19 @@
             
             <h2 style="text-align: center;">Rezervirajte vozilo</h2>
             <br>
-            <form>
-                    Vozilo: <input type="text" name="vozilo" id="voziloIn" value="Kliknite na sliku jednog od vozila" readonly><br>
-                    Broj dana: <input type="number" name="brojDana" id="brojDanaIn" min="1" max="90" required>
-                    Cijena (dan): <input type="text" name="cijena" id="cijenaIn" value="0 KM" readonly><br>
-                    Ukupno: <input type="text" name="cijenaU" id="ukupnoIn" value="0 KM" readonly><br>
-                    Vaše ime: <input type="text" name="kontaktInfo1" id="info1" required> E-mail / Kontakt Telefon: <input type="text" name="kontaktInfo2" id="info2" required><br>
-                    Datum preuzimanja: <input type="date" id ="datum" name="datum"> Lokacija preuzimanja: <select name="lokacije" id="lokac">
+            <form data-netlify="true">
+                    <label>Vozilo:</label> <input type="text" name="vozilo" id="voziloIn" value="Kliknite na sliku jednog od vozila" readonly><br>
+                    <label>Broj dana:</label><input type="number" name="brojDana" id="brojDanaIn" min="1" max="90" required>
+                    <label>Cijena</label> (dan): <input type="text" name="cijena" id="cijenaIn" value="0 KM" readonly><br>
+                    <label>Ukupno:</label> <input type="text" name="cijenaU" id="ukupnoIn" value="0 KM" readonly><br>
+                    <label>Vaše ime:</label> <input type="text" name="kontaktInfo1" id="info1" required> E-mail / Kontakt Telefon: <input type="text" name="kontaktInfo2" id="info2" required><br>
+                    <label>Datum preuzimanja:</label> <input type="date" id ="datum" name="datum"> Lokacija preuzimanja: <select name="lokacije" id="lokac">
                             <option value="odab">odaberite...</option>    
                             <option value="kolI">Kolodvor Istok</option>
                             <option value="kolZ">Kolodvor Zapad</option>
                             <option value="aer">Aerodrom Mostar</option>
                           </select><br>
-                    Kasko (5 KM/dan)  <input type="checkbox" name="kasko" id="kasko">   Baby sjedalica(3 KM/dan) <input type="checkbox" name="sjedalica" id="sjedalica"><br>
+                    <label>Kasko (5 KM/dan)</label>  <input type="checkbox" name="kasko" id="kasko">  <label> Baby sjedalica(3 KM/dan)</label> <input type="checkbox" name="sjedalica" id="sjedalica"><br>
                     
                     <input type="button" id="izr" value="Rezerviraj" onclick="reserve()"><input type="reset" value="Poništi" id="pon"> 
             </form>
